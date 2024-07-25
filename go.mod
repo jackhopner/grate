@@ -1,3 +1,3 @@
-module github.com/pbnjay/grate
+module github.com/jackhopner/grate
 
-go 1.16
+go 1.21
