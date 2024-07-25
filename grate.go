@@ -5,7 +5,6 @@ package grate
 import (
 	"errors"
 	"log"
-	"sort"
 )
 
 // Source represents a set of data collections.
@@ -73,21 +72,14 @@ func Open(filename string) (Source, error) {
 
 type srcOpenTab struct {
 	name string
-	pri  int
 	op   OpenFunc
 }
 
 var srcTable = make([]*srcOpenTab, 0, 20)
 
 // Register the named source as a grate datasource implementation.
-func Register(name string, priority int, opener OpenFunc) error {
-	if Debug {
-		log.Println("Registering the", name, "format at priority", priority)
-	}
-	srcTable = append(srcTable, &srcOpenTab{name: name, pri: priority, op: opener})
-	sort.Slice(srcTable, func(i, j int) bool {
-		return srcTable[i].pri < srcTable[j].pri
-	})
+func Register(name string, opener OpenFunc) error {
+	srcTable = append(srcTable, &srcOpenTab{name: name, op: opener})
 	return nil
 }
 

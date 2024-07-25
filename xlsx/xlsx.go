@@ -14,8 +14,6 @@ import (
 	"github.com/jackhopner/grate/commonxl"
 )
 
-var _ = grate.Register("xlsx", 5, Open)
-
 // Document contains an Office Open XML document.
 type Document struct {
 	filename   string

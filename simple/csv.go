@@ -2,12 +2,12 @@ package simple
 
 import (
 	"encoding/csv"
+	"errors"
+	"io"
 	"os"
 
 	"github.com/jackhopner/grate"
 )
-
-var _ = grate.Register("csv", -2, OpenCSV)
 
 // OpenCSV defines a Source's instantiation function.
 // It should return ErrNotInFormat immediately if filename is not of the correct file type.
@@ -33,7 +33,7 @@ func OpenCSV(filename string) (grate.Source, error) {
 		total++
 		t.rows = append(t.rows, rec)
 	}
-	if err != nil {
+	if err != nil && !errors.Is(err, io.EOF) {
 		switch perr := err.(type) {
 		case *csv.ParseError:
 			return nil, grate.WrapErr(perr, grate.ErrNotInFormat)

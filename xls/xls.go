@@ -20,8 +20,6 @@ import (
 	"github.com/jackhopner/grate/xls/crypto"
 )
 
-var _ = grate.Register("xls", 1, Open)
-
 // WorkBook represents an Excel workbook containing 1 or more sheets.
 type WorkBook struct {
 	filename string

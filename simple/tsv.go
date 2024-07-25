@@ -8,8 +8,6 @@ import (
 	"github.com/jackhopner/grate"
 )
 
-var _ = grate.Register("tsv", -1, OpenTSV)
-
 // OpenTSV defines a Source's instantiation function.
 // It should return ErrNotInFormat immediately if filename is not of the correct file type.
 func OpenTSV(filename string) (grate.Source, error) {
