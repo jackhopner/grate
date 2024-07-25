@@ -8,7 +8,7 @@ import (
 	"github.com/pbnjay/grate"
 )
 
-var _ = grate.Register("tsv", 10, OpenTSV)
+var _ = grate.Register("tsv", -1, OpenTSV)
 
 // OpenTSV defines a Source's instantiation function.
 // It should return ErrNotInFormat immediately if filename is not of the correct file type.
