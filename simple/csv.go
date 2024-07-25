@@ -7,7 +7,7 @@ import (
 	"github.com/pbnjay/grate"
 )
 
-var _ = grate.Register("csv", 15, OpenCSV)
+var _ = grate.Register("csv", -2, OpenCSV)
 
 // OpenCSV defines a Source's instantiation function.
 // It should return ErrNotInFormat immediately if filename is not of the correct file type.
