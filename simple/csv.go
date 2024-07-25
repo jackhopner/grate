@@ -4,7 +4,7 @@ import (
 	"encoding/csv"
 	"os"
 
-	"github.com/pbnjay/grate"
+	"github.com/jackhopner/grate"
 )
 
 var _ = grate.Register("csv", -2, OpenCSV)

@@ -5,7 +5,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/pbnjay/grate"
+	"github.com/jackhopner/grate"
 )
 
 var _ = grate.Register("tsv", -1, OpenTSV)

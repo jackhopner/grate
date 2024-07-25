@@ -9,7 +9,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/pbnjay/grate"
+	"github.com/jackhopner/grate"
 )
 
 func (d *Document) parseRels(dec *xml.Decoder, basedir string) error {
